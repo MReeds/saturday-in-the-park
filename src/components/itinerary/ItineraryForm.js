@@ -16,7 +16,7 @@ const ItineraryForm = props => {
         e.preventDefault();
 
         const itineraryItemObj = {
-            "start_time": Number(itineraryItem.startTime),
+            "starttime": Number(itineraryItem.startTime),
             "attraction_id": Number(itineraryItem.attractionId)
         }
 
@@ -36,16 +36,16 @@ const ItineraryForm = props => {
             ItineraryManager.getItineraryItem(props.match.params.itemId)
                 .then(item => {
                     const stateToChange = { ...itineraryItem }
-                    stateToChange.startTime = item.start_time
+                    stateToChange.startTime = item.starttime
                     stateToChange.attractionId = item.attraction_id
                     setItineraryItem(stateToChange)
                 })
         }
         ParkManager.getAttractions()
-            .then((allAttractions) => {
-                setAttractions(allAttractions)
+        .then((allAttractions) => {
+            setAttractions(allAttractions)
             })
-    }, [])
+    }, []);
     return (
       <form className="form--login" onSubmit={handleSubmit}>
         <h1 className="h3 mb-3 font-weight-normal">Add new item to my Itinerary</h1>
