@@ -18,8 +18,8 @@ export default {
               "Accept": "application/json",
               "Authorization": `Token ${sessionStorage.getItem("kennywood-token")}`
             }
-            .then(resp => resp.json())
-        })
+          })
+          .then(resp => resp.json())
     },
     getAttractionsByArea(areaId) {
         return fetch(`${parkApiUrl}/attractions?area=${areaId}`, {

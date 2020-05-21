@@ -4,6 +4,8 @@ import {withRouter} from "react-router-dom"
 import Register from "./auth/Register"
 import Login from "./auth/Login"
 import ParkExplorer from "./home/ParkExplorer"
+import MyItinerary from "./itinerary/MyItinerary"
+import ItineraryForm from "./itinerary/ItineraryForm"
 
 const ApplicationViews = () => {
     return (
@@ -39,11 +41,18 @@ const ApplicationViews = () => {
                 path="/myitinerary" render={props => {
                     return (
                         <>
-                            <h1>Placeholder for user's itinerary</h1>
+                            <MyItinerary {...props}/>
                         </>
                     )
                 }}
             />
+            <Route exact path="/myitinerary/new" render={props => {
+                return <ItineraryForm {...props} />
+            }}
+            />
+            <Route path="/myitinerary/:itemId(\d+)/edit" render={props => {
+                return <ItineraryForm {...props} />
+            }} />
         </React.Fragment>
     )
 }

@@ -2,7 +2,7 @@
 import useSimpleAuth from "../auth/useSimpleAuth"
 import ParkManager from "../../modules/ParkManager"
 import AreaList from "./AreaList"
-// import AttractionList from "./AttractionList"
+import AttractionList from "./AttractionList"
 
 const ParkExplorer = props => {
     const [areas, setAreas] = useState([])
@@ -31,7 +31,7 @@ const ParkExplorer = props => {
         <>
             <main className="explorer">
                 <AreaList areas={areas} getAttractions={getAttractions} />
-                {/* <AttractionList attractions={attractions} {...props} /> */}
+                <AttractionList attractions={attractions} {...props} />
             </main>
         </>
     )
