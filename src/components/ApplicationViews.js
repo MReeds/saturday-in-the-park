@@ -2,6 +2,7 @@ import {Route} from "react-router-dom"
 import React from "react"
 import {withRouter} from "react-router-dom"
 import Register from "./auth/Register"
+import Login from "./auth/Login"
 
 const ApplicationViews = () => {
     return (
@@ -28,7 +29,7 @@ const ApplicationViews = () => {
                 path="/login" render={props => {
                     return (
                         <>
-                            <h1>Placeholder for Login</h1>
+                            <Login {...props}/>
                         </>
                     )
                 }}
