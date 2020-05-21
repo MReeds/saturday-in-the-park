@@ -32,7 +32,7 @@ const Register = props => {
         .then(response => response.json())
         .then(parsedResponse => {
             if("token" in parsedResponse) {
-                sessionStorage.setItem("kennywood-token", parsedResponse.token)
+              sessionStorage.setItem("kennywood-token", parsedResponse.token)
             }
         })
     }
